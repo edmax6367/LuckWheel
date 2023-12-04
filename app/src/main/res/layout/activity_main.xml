@@ -571,8 +571,8 @@
 
             <ImageView
                 android:id="@+id/invite"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
@@ -603,8 +603,8 @@
 
             <ImageView
                 android:id="@+id/rr"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
@@ -636,8 +636,8 @@
 
             <ImageView
                 android:id="@+id/ww"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
@@ -669,8 +669,8 @@
 
             <ImageView
                 android:id="@+id/cc"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
@@ -701,8 +701,8 @@
 
             <ImageView
                 android:id="@+id/wallet"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
@@ -734,8 +734,8 @@
 
             <ImageView
                 android:id="@+id/abt"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
