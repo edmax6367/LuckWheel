@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pandora_latest.pandora_spin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_psl"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_psl"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LuckWheel"
+        tools:targetApi="33">
+        <activity
+            android:name="com.pandora_latest.pandora_spin.Tutor"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.MyItems"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.ProductView"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.Market"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.Chat_Room.ChatRoom"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.Customer_Room.CustomerRoom"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.NORMAL_WITHDRAW"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.RECEIPT"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.Amount"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.USDT"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.Edit"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.About"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.Recharge"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.Profile"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.ViewImage"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.Register"
+            android:exported="false" />
+        <activity
+            android:name="com.pandora_latest.pandora_spin.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="example.com"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity> <!-- real meta -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8923513180666274~4385852705" />
+
+
+    </application>
+
+</manifest>

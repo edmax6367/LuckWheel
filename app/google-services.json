@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "621003877074",
+    "firebase_url": "https://luck-wheel-56797-default-rtdb.firebaseio.com",
+    "project_id": "luck-wheel-56797",
+    "storage_bucket": "luck-wheel-56797.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621003877074:android:ffa41df322b9b9c7dbdb0b",
+        "android_client_info": {
+          "package_name": "com.example.pandora_app_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621003877074-joadpotfncv0jmlron1p9e0o2vc106g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-bJc0flp6FMaM09S0EyGqa_ZfRRT-nLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621003877074-joadpotfncv0jmlron1p9e0o2vc106g1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "621003877074-5tlenv1faja73bf92gf438k7b8uqj8su.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pandoraAppStore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621003877074:android:f37b94fb85349f87dbdb0b",
+        "android_client_info": {
+          "package_name": "com.pandora.pandora_spin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621003877074-joadpotfncv0jmlron1p9e0o2vc106g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-bJc0flp6FMaM09S0EyGqa_ZfRRT-nLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621003877074-joadpotfncv0jmlron1p9e0o2vc106g1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "621003877074-5tlenv1faja73bf92gf438k7b8uqj8su.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pandoraAppStore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621003877074:android:1e17a3360c41d81edbdb0b",
+        "android_client_info": {
+          "package_name": "com.pandora_latest.pandora_spin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621003877074-joadpotfncv0jmlron1p9e0o2vc106g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-bJc0flp6FMaM09S0EyGqa_ZfRRT-nLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621003877074-joadpotfncv0jmlron1p9e0o2vc106g1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "621003877074-5tlenv1faja73bf92gf438k7b8uqj8su.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pandoraAppStore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

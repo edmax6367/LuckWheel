@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Register">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:visibility="visible">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/signup_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:visibility="gone">
+
+
+                <LinearLayout
+                    android:id="@+id/name_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:src="@drawable/invited_illu"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Welcome into a perfect world of earning on your mobile\n Let's Get to know You, Start by filling your full name below."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_input_background"
+                        android:ems="6"
+                        android:gravity="start"
+                        android:hint="Username"
+                        android:inputType="textPersonName"
+                        android:padding="15dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="#2196F3" />
+
+                    <TextView
+                        android:id="@+id/open_log"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/next"
+                        android:padding="2dp"
+                        android:text="Existing user ? Login here"
+                        android:textAlignment="center"
+                        android:textColor="#2196F3"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+
+                    <Button
+                        android:id="@+id/to_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_button_background"
+                        android:text="Get started" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/number_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:src="@drawable/phone_illu" />
+
+                    <TextView
+                        android:id="@+id/set_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Hey Username Let's Set Up your Phone Number Make Sure to begin with your Country Code eg ${255} and do not include 0 currently we support Airtel, Vodacom, Halotel and Tigo"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_input_background"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                        <Spinner
+                            android:id="@+id/country_code_spinner"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.AppCompat.DayNight" />
+
+                        <EditText
+                            android:id="@+id/num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/emptybg"
+                            android:ems="6"
+                            android:gravity="start"
+                            android:hint="Phone"
+                            android:inputType="phone"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="#2196F3" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/to_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_button_background"
+                        android:text="Continue" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/password_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:src="@drawable/password_illu" />
+
+                    <TextView
+                        android:id="@+id/set_name_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Hey Username Let's Set Up your Security Pin for phone Make Sure to create a string pin or password with 6 or more digits to secure your account."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_input_background"
+                        android:ems="6"
+                        android:gravity="start"
+                        android:hint="Password"
+                        android:inputType="textVisiblePassword"
+                        android:padding="15dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="#2196F3" />
+
+                    <Button
+                        android:id="@+id/create_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_button_background"
+                        android:text="Register" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/login_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/number_container_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:src="@drawable/phone_illu"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="To login Please enter the number you used when registering \nNote: Do not include a country code Your number must start with 0"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_input_background"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                        <Spinner
+                            android:id="@+id/country_code_spinner2"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.AppCompat.DayNight" />
+
+                        <EditText
+                            android:id="@+id/log_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/emptybg"
+                            android:ems="6"
+                            android:gravity="start"
+                            android:hint="Phone"
+                            android:inputType="phone"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="#2196F3" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/open_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="14dp"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/next"
+                        android:padding="2dp"
+                        android:text="New User ? Create account "
+                        android:textAlignment="center"
+                        android:textColor="#2196F3"
+                        android:textSize="16sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/to_pass_log"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_button_background"
+                        android:text="Continue" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/password_container_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:src="@drawable/password_illu"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Please enter your registered Password to Finish the login process."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/log_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_input_background"
+                        android:ems="6"
+                        android:gravity="start"
+                        android:hint="Password"
+                        android:inputType="textVisiblePassword"
+                        android:padding="15dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="#2196F3" />
+
+                    <Button
+                        android:id="@+id/log_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_button_background"
+                        android:text="Login" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/processing"
+        layout="@layout/progress_dialog"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
