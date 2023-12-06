@@ -10,8 +10,8 @@ android {
         applicationId "com.pandora_latest.pandora_spin"
         minSdk 19
         targetSdk 33
-        versionCode 3
-        versionName "3"
+        versionCode 5
+        versionName "5"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

@@ -173,91 +173,90 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         vid = findViewById(R.id.videoView);
         min_Vid = findViewById(R.id.min_video);
 
-        //
-        a1.setAmount(1500);
-        a1.setProfit(1000);
+        a1.setAmount(5000);
+        a1.setProfit(8600);
         a1.setVIP(1);
         a1.setName("VIP 1");
         a1.setpReturn(0);
         a1.setDays(7);
 
-        a2.setAmount(2500);
-        a2.setProfit(1500);
+        a2.setAmount(15000);
+        a2.setProfit(21000);
         a2.setVIP(2);
         a2.setName("VIP 2");
         a2.setpReturn(0);
         a2.setDays(7);
 
-        a3.setAmount(3500);
-        a3.setProfit(2000);
+        a3.setAmount(25000);
+        a3.setProfit(32000);
         a3.setVIP(3);
         a3.setName("VIP 3");
         a3.setpReturn(0);
         a3.setDays(7);
 
-        a4.setAmount(4500);
-        a4.setProfit(2500);
+        a4.setAmount(35000);
+        a4.setProfit(43000);
         a4.setVIP(4);
         a4.setName("VIP 4");
         a4.setpReturn(0);
         a4.setDays(7);
 
 
-        a5.setAmount(5500);
-        a5.setProfit(3000);
+        a5.setAmount(55000);
+        a5.setProfit(70000);
         a5.setVIP(5);
         a5.setName("VIP 5");
         a5.setpReturn(0);
         a5.setDays(7);
 
         a6.setAmount(100000);
-        a6.setProfit(25000);
+        a6.setProfit(135000);
         a6.setVIP(6);
         a6.setName("VIP 6");
         a6.setpReturn(0);
         a6.setDays(7);
 
-        a7.setAmount(250000);
-        a7.setProfit(30480);
+        a7.setAmount(200000);
+        a7.setProfit(350000);
         a7.setVIP(1);
         a7.setName("VVIP 1");
         a7.setpReturn(0);
         a7.setDays(30);
 
-        a8.setAmount(255000);
-        a8.setProfit(64980);
+        a8.setAmount(300000);
+        a8.setProfit(450000);
         a8.setVIP(2);
         a8.setName("VVIP 2");
         a8.setpReturn(0);
-        a8.setDays(60);
+        a8.setDays(30);
 
-        a9.setAmount(260000);
-        a9.setProfit(99990);
+        a9.setAmount(400000);
+        a9.setProfit(550000);
         a9.setVIP(3);
         a9.setName("VVIP 3");
         a9.setpReturn(0);
-        a9.setDays(90);
+        a9.setDays(30);
 
-        a10.setAmount(550000);
-        a10.setProfit(100500);
+        a10.setAmount(500000);
+        a10.setProfit(650000);
         a10.setVIP(4);
         a10.setName("VVIP 4");
         a10.setpReturn(0);
         a10.setDays(30);
 
-        a11.setAmount(555000);
-        a11.setProfit(201990);
+        a11.setAmount(600000);
+        a11.setProfit(750000);
         a11.setVIP(5);
         a11.setName("VVIP 5");
         a11.setpReturn(0);
-        a11.setDays(60);
+        a11.setDays(30);
 
-        a12.setAmount(560000);
-        a12.setProfit(304920);
+        a12.setAmount(700000);
+        a12.setProfit(870000);
         a12.setVIP(6);
         a12.setName("VVIP 6");
         a12.setpReturn(0);
-        a12.setDays(90);
+        a12.setDays(30);
 
         //GOLD
         a13.setAmount(1000000);
@@ -265,42 +264,42 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         a13.setVIP(7);
         a13.setName("GOLD 1");
         a13.setpReturn(100000);
-        a13.setDays(90);
+        a13.setDays(30);
 
         a14.setAmount(2000000);
         a14.setProfit(500000);
         a14.setVIP(8);
         a14.setName("GOLD 2");
         a14.setpReturn(220000);
-        a14.setDays(90);
+        a14.setDays(30);
 
         a15.setAmount(3000000);
         a15.setProfit(700000);
         a15.setVIP(9);
         a15.setName("GOLD 3");
         a15.setpReturn(300000);
-        a15.setDays(90);
+        a15.setDays(30);
 
         a16.setAmount(4000000);
         a16.setProfit(850000);
         a16.setVIP(10);
         a16.setName("GOLD 4");
         a16.setpReturn(330000);
-        a16.setDays(90);
+        a16.setDays(30);
 
         a17.setAmount(5000000);
         a17.setProfit(1000000);
         a17.setVIP(11);
         a17.setName("GOLD 5");
         a17.setpReturn(500000);
-        a17.setDays(90);
+        a17.setDays(30);
 
         a18.setAmount(10000000);
         a18.setProfit(3000000);
         a18.setVIP(12);
         a18.setName("GOLD 6");
         a18.setpReturn(1000000);
-        a18.setDays(90);
+        a18.setDays(30);
         //GOLD END
 
         amountModels.add(a1);
