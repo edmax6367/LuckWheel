@@ -174,28 +174,28 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         min_Vid = findViewById(R.id.min_video);
 
         a1.setAmount(5000);
-        a1.setProfit(8600);
+        a1.setProfit(8600-5000);
         a1.setVIP(1);
         a1.setName("VIP 1");
         a1.setpReturn(0);
         a1.setDays(7);
 
         a2.setAmount(15000);
-        a2.setProfit(21000);
+        a2.setProfit(21000-15000);
         a2.setVIP(2);
         a2.setName("VIP 2");
         a2.setpReturn(0);
         a2.setDays(7);
 
         a3.setAmount(25000);
-        a3.setProfit(32000);
+        a3.setProfit(32000-25000);
         a3.setVIP(3);
         a3.setName("VIP 3");
         a3.setpReturn(0);
         a3.setDays(7);
 
         a4.setAmount(35000);
-        a4.setProfit(43000);
+        a4.setProfit(43000-35000);
         a4.setVIP(4);
         a4.setName("VIP 4");
         a4.setpReturn(0);
@@ -203,56 +203,56 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
 
 
         a5.setAmount(55000);
-        a5.setProfit(70000);
+        a5.setProfit(70000-55000);
         a5.setVIP(5);
         a5.setName("VIP 5");
         a5.setpReturn(0);
         a5.setDays(7);
 
         a6.setAmount(100000);
-        a6.setProfit(135000);
+        a6.setProfit(135000-100000);
         a6.setVIP(6);
         a6.setName("VIP 6");
         a6.setpReturn(0);
         a6.setDays(7);
 
         a7.setAmount(200000);
-        a7.setProfit(350000);
+        a7.setProfit(350000-200000);
         a7.setVIP(1);
         a7.setName("VVIP 1");
         a7.setpReturn(0);
         a7.setDays(30);
 
         a8.setAmount(300000);
-        a8.setProfit(450000);
+        a8.setProfit(450000-300000);
         a8.setVIP(2);
         a8.setName("VVIP 2");
         a8.setpReturn(0);
         a8.setDays(30);
 
         a9.setAmount(400000);
-        a9.setProfit(550000);
+        a9.setProfit(550000-400000);
         a9.setVIP(3);
         a9.setName("VVIP 3");
         a9.setpReturn(0);
         a9.setDays(30);
 
         a10.setAmount(500000);
-        a10.setProfit(650000);
+        a10.setProfit(650000-500000);
         a10.setVIP(4);
         a10.setName("VVIP 4");
         a10.setpReturn(0);
         a10.setDays(30);
 
         a11.setAmount(600000);
-        a11.setProfit(750000);
+        a11.setProfit(750000-600000);
         a11.setVIP(5);
         a11.setName("VVIP 5");
         a11.setpReturn(0);
         a11.setDays(30);
 
         a12.setAmount(700000);
-        a12.setProfit(870000);
+        a12.setProfit(870000-700000);
         a12.setVIP(6);
         a12.setName("VVIP 6");
         a12.setpReturn(0);
