@@ -158,8 +158,11 @@ public class Register extends AppCompatActivity {
                 String fullPhoneNumber = phoneNumber;
 
                 if(phoneNumber.length() > 13){
-                    number.setError("Invalid Phone Number");
-                }else {
+                    number.setError("Namba si sahihi");
+                }else if(phoneNumber.contains("+")){
+                    number.setError("Ondoa '+'");
+                }
+                else {
                     verified_phone_number = fullPhoneNumber;
                 }
             }
@@ -170,12 +173,13 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 String name_data = name.getText().toString();
                 if(!name_data.isEmpty()){
-                    set_name.setText("Hey "+name_data+" Let's Set Up your Phone Number Make Sure to begin with your Country Code eg 255 and do not include 0 currently we support Airtel, Vodacom, Halotel and Tigo");
+                    set_name.setText("Habari "+name_data+" Ingiza namba yako ya simu Hakikisha inaanza na kodi ya inchi mfano 25570.. bila kuweka sifuri, Mitandao tunayo ruhusu Airtel, Vodacom, Halotel na Tigo");
+                    //set_name.setText("Hey "+name_data+" Let's Set Up your Phone Number Make Sure to begin with your Country Code eg 255 and do not include 0 currently we support Airtel, Vodacom, Halotel and Tigo");
                     name_container.setVisibility(View.GONE);
                     password_container.setVisibility(View.GONE);
                     phone_container.setVisibility(View.VISIBLE);
                 }else{
-                    name.setError("Name needed");
+                    name.setError("Jina linahitajika");
                 }
 
             }
@@ -184,10 +188,15 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!verified_phone_number.isEmpty()){
-                    login_password_container.setVisibility(View.VISIBLE);
-                    login_phone_container.setVisibility(View.GONE);
+                    if(!verified_phone_number.contains("+")){
+                        login_password_container.setVisibility(View.VISIBLE);
+                        login_phone_container.setVisibility(View.GONE);
+                    }else{
+                        lnumber.setError("Namba si sahihi");
+                    }
+
                 }else{
-                    lnumber.setError("Valid Phone number needed");
+                    lnumber.setError("Namba si sahihi");
                 }
 
             }
@@ -198,20 +207,24 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(!verified_phone_number.isEmpty()){
-                    if(!verified_phone_number.contains("255")){
-                        number.setError("Country code needed");
+                    if(verified_phone_number.contains("+")){
+                        number.setError("Ondoa '+' mwanzo wa namba");
                     }
-                    else if(verified_phone_number.contains("2550")){
-                        number.setError("Do not include 0 after country code");
-                    }else{
-                        set_name_password.setText("Hey "+name.getText().toString()+" Let's Set Up your Security Pin for "+verified_phone_number.toString()+" Make Sure to create a strong pin or password with 6 or more digits to secure your account.");
+                    else if(!verified_phone_number.contains("255")){
+                        number.setError("Anza na 255");
+                    }else if(verified_phone_number.contains("2550")) {
+                        number.setError("Ondoa '0' baada ya 255");
+                    }
+                    else{
+                        set_name_password.setText("Habari "+name.getText().toString()+"Tengeneza nywila yako kwa ajiri ya "+verified_phone_number.toString()+" Hakikisha nywila ina urefu wa talakimu 6 au zaidi kulinda akaunti yako");
+                        //set_name_password.setText("Hey "+name.getText().toString()+" Let's Set Up your Security Pin for "+verified_phone_number.toString()+" Make Sure to create a strong pin or password with 6 or more digits to secure your account.");
                         name_container.setVisibility(View.GONE);
                         password_container.setVisibility(View.VISIBLE);
                         phone_container.setVisibility(View.GONE);
                     }
 
                 }else{
-                    number.setError("Phone needed");
+                    number.setError("Weka namba sahihi");
                 }
             }
         });
@@ -238,7 +251,7 @@ public class Register extends AppCompatActivity {
                 String fullPhoneNumber = phoneNumber;
 
                 if(phoneNumber.length() > 13){
-                    number.setError("Invalid Phone Number");
+                    number.setError("Namba ya simu si sahihi");
                 }else {
                     verified_phone_number = fullPhoneNumber;
                 }
@@ -273,16 +286,16 @@ public class Register extends AppCompatActivity {
                 String password_data = password.getText().toString();
                 String name_data = name.getText().toString();
                 if(number_data.isEmpty()){
-                    number.setError("Number Required");
+                    number.setError("Namba inahitajika");
                 }else if(password_data.isEmpty()){
-                    password.setError("Password Needed");
+                    password.setError("Nywila inahitajika");
                 }else if(imageLink == null){
                     Toast.makeText(Register.this, "Tap Image Icon So Set Profile Image", Toast.LENGTH_LONG).show();
                 }else if(name_data.isEmpty()){
-                    name.setError("Name Needed");
+                    name.setError("Jina linahitajika");
                 }
                 else if(password_data.length() < 5){
-                    Toast.makeText(Register.this, "Password Should Be At Least 6 Characters", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Register.this, "Nywila lazima iwe na talakimu 6 au zaidi", Toast.LENGTH_LONG).show();
                 }
                 else {
                     processing.setVisibility(View.VISIBLE);
@@ -298,11 +311,11 @@ public class Register extends AppCompatActivity {
                 String number_data = lnumber.getText().toString();
                 String password_data = lpassword.getText().toString();
                 if(number_data.isEmpty()){
-                    lnumber.setError("Number Required");
+                    lnumber.setError("Namba inahitajika");
                 }else if(password_data.isEmpty()){
-                    lpassword.setError("Password Required");
+                    lpassword.setError("Nywila inahitajika");
                 }else if(password_data.length() < 5){
-                    Toast.makeText(Register.this, "Password Should Be At Least 6 Characters", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Register.this, "Nywila lazima iwe na ulefu wa talakimu 6 au zaidi", Toast.LENGTH_LONG).show();
                 }
                 else {
                     // processing.setVisibility(View.VISIBLE);

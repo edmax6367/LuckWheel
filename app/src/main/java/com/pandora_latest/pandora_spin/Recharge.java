@@ -314,12 +314,12 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         amountModels.add(a10);
         amountModels.add(a11);
         amountModels.add(a12);
-        amountModels.add(a13);
+       /* amountModels.add(a13);
         amountModels.add(a14);
         amountModels.add(a15);
         amountModels.add(a16);
         amountModels.add(a17);
-        amountModels.add(a18);
+        amountModels.add(a18);*/
         //
 
         //payment methords
@@ -375,6 +375,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
                                         vid.pause();
                                     }else{
                                         vid.start();
+
                                     }
                                 }else{
                                     Toast.makeText(Recharge.this, "Video not ready please wait", Toast.LENGTH_LONG).show();
@@ -391,6 +392,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
                                 }
                                 if(!mediaPlayer.isPlaying()){
                                     mediaPlayer.start();
+                                    mediaPlayer.setVolume(0,0);
                                 }
                             }
                         });
@@ -431,7 +433,10 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
                     toggleFullScreen();
             }
         });
-        
+        if(media != null){
+            media.setVolume(0,0);
+            mute.setVisibility(View.GONE);un_mute.setVisibility(View.GONE);
+        }
         mute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -446,7 +451,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View view) {
                 if(media != null){
-                    media.setVolume(1,1);
+                   // media.setVolume(1,1);
                     mute.setVisibility(View.VISIBLE);un_mute.setVisibility(View.GONE);
                 }
             }
@@ -456,7 +461,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
        checkMyinvites();
 
 
-        networkNames= new String[]{"None","Tigo","Airtel","Zantel","Halotel","TTCL","Vodacom"};
+        networkNames= new String[]{"Chagua","Tigo","Airtel","Zantel","Halotel","TTCL","Vodacom"};
         spin.setOnItemSelectedListener(this);
 
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,networkNames);
@@ -479,7 +484,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
             public void afterTextChanged(Editable s) {
                 if(!camount.getText().toString().isEmpty()){
 
-                            long percent = 8;
+                            long percent = 4;
                             long amount = Long.parseLong(camount.getText().toString());
                             tax = amount*percent/100;
                             taxtext.setText(String.valueOf("Tsh "+String.valueOf(tax)));
@@ -538,7 +543,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         wid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recharge.setVisibility(View.VISIBLE);
+                recharge.setVisibility(View.GONE);
                 wid.setVisibility(View.GONE);
                 container_withdraw.setVisibility(View.VISIBLE);
                 container_recharge.setVisibility(View.GONE);
@@ -549,14 +554,14 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         });
 
         if(openState == 0){
-            recharge.setVisibility(View.VISIBLE);
+            recharge.setVisibility(View.GONE);
             container_withdraw.setVisibility(View.VISIBLE);
             container_recharge.setVisibility(View.GONE);
             View howto = findViewById(R.id.howto);
             howto.setVisibility(View.GONE);
             helpType ="w";
         }else{
-            wid.setVisibility(View.VISIBLE);
+            wid.setVisibility(View.GONE);
             container_recharge.setVisibility(View.VISIBLE);
             container_withdraw.setVisibility(View.GONE);
             View howto = findViewById(R.id.howto);
@@ -779,13 +784,13 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY){
 
             if (cash.isEmpty()) {
-                amount.setError("Amount Cant Be Empty");
+                amount.setError("Weka kiasi");
             } else if (wallet_network.isEmpty() || wallet_network.equals("None")) {
-                Toast.makeText(this, "Select network Type", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Chagua aina ya mtandao", Toast.LENGTH_LONG).show();
             } else if (name.isEmpty()) {
-                Toast.makeText(this, "Account name cant be empty", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Weka jina la akaunti", Toast.LENGTH_LONG).show();
             }else if (c1 < 2500) {
-                Toast.makeText(this, "Minimal Amount to withdraw is 2500Tsh", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Kiasi cha chini cha kutoa ni 2500Tsh", Toast.LENGTH_LONG).show();
             } else {
 
                 long c = c1 - tax;
@@ -797,13 +802,13 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
 
             if(removeTax){
                 if (cash.isEmpty()) {
-                    amount.setError("Amount Cant Be Empty");
-                } else if (wallet_network.isEmpty() || wallet_network.equals("None")) {
-                    Toast.makeText(getApplicationContext(), "Select network Type", Toast.LENGTH_LONG).show();
+                    amount.setError("Weka kiasi");
+                } else if (wallet_network.isEmpty() || wallet_network.equals("Chagua")) {
+                    Toast.makeText(this, "Chagua aina ya mtandao", Toast.LENGTH_LONG).show();
                 } else if (name.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Account name cant be empty", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Weka jina la akaunti", Toast.LENGTH_LONG).show();
                 }else if (c1 < 2500) {
-                    Toast.makeText(getApplicationContext(), "Minimal Amount to withdraw is 2500Tsh", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Kiasi cha chini cha kutoa ni 2500Tsh", Toast.LENGTH_LONG).show();
                 } else {
 
                     long c = c1 - tax;
@@ -812,7 +817,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
 
                 }
             }else{
-                Toast.makeText(this, "You can withdraw on Saturday Only,\n Invite 3 Users to remove limit once they deposit minimum amount of 1500Tsh", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Unaweza kutoa jumamosi,\n Invite 3 Users to remove limit once they deposit minimum amount of 1500Tsh", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -903,7 +908,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
         String reference = "";
 
         //String[] patterns = new String[]{"^([A-Z0-9]+)","Muamala: (\\d+)","Muamala No: (MP[A-Za-z0-9.]+)", "Kumbukumbu no.: (\\d+)","Kumbukumbu No.: (\\d+)"};
-        String[] patterns = new String[]{"Kumbukumbu no.: (\\d+)","(\\w+) Imethibitishwa","Utambulisho wa Muamala: (\\d+)","Muamala No: (MP[A-Za-z0-9.]+)"};
+        String[] patterns = new String[]{"Kumbukumbu no.: (\\d+)","(\\w+) Imethibitishwa","Utambulisho wa Muamala: (\\d+)","Muamala No: (MP[A-Za-z0-9.]+)","ID: (MP[A-Za-z0-9.]+)"};
 
         for (String pattern : patterns){
             referencePattern = pattern;
@@ -1198,7 +1203,7 @@ public class Recharge extends AppCompatActivity implements AdapterView.OnItemSel
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
         //Toast.makeText(getApplicationContext(), networkNames[position], Toast.LENGTH_LONG).show();
         wallet_network = networkNames[position];
-        network.setText("Network Type :"+wallet_network);
+        network.setText("Mtandao wa :"+wallet_network);
     }
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {

@@ -1,4 +1,29 @@
 <resources>
-    <string name="app_name">Pandora Spin</string>
-    <string name="about_pandora">Pandora Spin is a mobile application that allows users to earn rewards by spinning a virtual wheel containing different products. \n \n The app offers users the opportunity to collect 10 spins per day, \n and after completing the spins, \n the user will have to wait for 24 hours to repeat the process. \n \n Terms of Use: \n \n Eligibility: \n Pandora Spin is available to all individuals who are 18 years and above. \n User Accounts: \n To use the app, users must create an account and provide accurate and complete information. \n The user is responsible for maintaining the confidentiality of their account and password and for any activities that occur under their account. \n Spinning the Wheel: \n Users can spin the wheel up to 10 times per day. The results of the spins are random, and the user will earn a reward based on the product they land on. \n Rewards: \n Rewards are credited to the user\'s account immediately after a successful spin. Users can redeem their rewards for cash. \n The value of the rewards is subject to change without prior notice. \n Prohibited Activities: \n Users are prohibited from using any automated system or software to access the app, modifying or attempting to modify any part of the app, engaging in any activity that interferes with the normal operation of the app, or engaging in any fraudulent activity. \n Termination: \n Pandora Spin reserves the right to terminate any user account without notice if the user violates any of the terms of use. \n \n Disclaimer of Warranties: \n \n Pandora Spin makes no warranties or representations about the accuracy, completeness, or reliability of the app or the content therein. \n The app is provided on an basis without warranty of any kind. \n Limitation of Liability: Pandora Spin shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from the use of the app. \n Changes to the Terms of Use: Pandora Spin reserves the right to modify the terms of use at any time without notice. \n \n By using Pandora Spin, the user agrees to these terms of use.</string>
+    <string name="app_name">Pandora Spin LLC</string>
+    <string name="about_pandora">Pandora Spin LLC ni programu ya simu inayoruhusu watumiaji kupata fedha kwa kutangaza bidhaa mtandaoni kwa mfumo wa kuspin.
+
+Pandora Spin LLC inazungusha gurudumu lenye bidhaa tofauti ili kumpa mwanachama nafasi ya kuchagua bidhaa ya kupeleka sokoni.
+
+Programu hutoa fursa ya kukusanya spins 10 kwa siku na baada ya kumaliza spins hizo, utalazimika kusubiri kwa masaa 24 kurudia mchakato.
+
+Pandora Spin LLC inapatikana kwa watu wote wenye umri wa miaka 18 na zaidi.
+
+Watumiaji wanapaswa kuunda akaunti ili kupata dhamana ya kuanza kutangaza bidhaa mtandaoni. Ni wajibu wa kila mwanachama kudumisha usiri wa akaunti yake na nenosiri kwa shughuli zote.
+
+Watumiaji wanaweza kuspin gurudumu hadi mara 10 kwa siku na kupata faida ya fedha kulingana na kiasi kilichopo kwenye akaunti husika.
+
+Ni marufuku kutumia mfumo wowote au programu kujaribu kurekebisha sehemu yoyote ya programu, au kushiriki katika shughuli yoyote inayoingilia utendaji wa kawaida wa programu.
+
+Pandora Spin LLC ina haki ya kusitisha shughuli ya akaunti yoyote ya mtumiaji bila kutoa taarifa ikiwa mtumiaji atakiuka sera za jukwaa hilo, au anapokiuka masharti yoyote ya matumizi.
+
+Pandora Spin LLC haitoi dhamana au uwakilishi kuhusu usahihi au ukamilifu, badala yake hutolewa kwa msingi bila dhamana yoyote.
+
+Pandora Spin LLC haitawajibika moja kwa moja kwa madhara yatakayotokea kutokana na matumizi ya programu.
+
+Pandora Spin LLC ina haki ya kurekebisha masharti ya matumizi wakati wowote bila taarifa.
+
+Kwa kutumia Pandora Spin LLC, mtumiaji anakubaliana na masharti haya ya matumizi.
+
+ Pandora Spin LLC</string>
+
 </resources>

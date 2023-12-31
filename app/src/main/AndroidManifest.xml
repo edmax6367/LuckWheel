@@ -17,16 +17,28 @@
         android:theme="@style/Theme.LuckWheel"
         tools:targetApi="33">
         <activity
-            android:name="com.pandora_latest.pandora_spin.Tutor"
+            android:name="com.pandora_latest.InstallApp"
+            android:exported="true" >
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="luckwheel.page.link"
+                    android:pathPrefix="/install" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MyItems"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.MyItems"
+            android:name=".ProductView"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.ProductView"
-            android:exported="false" />
-        <activity
-            android:name="com.pandora_latest.pandora_spin.Market"
+            android:name=".Market"
             android:exported="false" />
         <activity
             android:name="com.pandora_latest.Chat_Room.ChatRoom"
@@ -35,37 +47,37 @@
             android:name="com.pandora_latest.Customer_Room.CustomerRoom"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.NORMAL_WITHDRAW"
+            android:name=".NORMAL_WITHDRAW"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.RECEIPT"
+            android:name=".RECEIPT"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.Amount"
+            android:name=".Amount"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.USDT"
+            android:name=".USDT"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.Edit"
+            android:name=".Edit"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.About"
+            android:name=".About"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.Recharge"
+            android:name=".Recharge"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.Profile"
+            android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.ViewImage"
+            android:name=".ViewImage"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.Register"
+            android:name=".Register"
             android:exported="false" />
         <activity
-            android:name="com.pandora_latest.pandora_spin.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -86,8 +98,6 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8923513180666274~4385852705" />
-
-
     </application>
 
 </manifest>

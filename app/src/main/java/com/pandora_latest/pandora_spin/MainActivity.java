@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -68,7 +69,7 @@ import java.util.Random;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements RequestListener<Drawable> {
-    TextView btnSpin;
+    TextView btnSpin,b_wallet;
     View ivWheel;
     CountDownTimer timer;
     TextView deg,cash,hours;
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
     private int randomNumber = 0;
     private float degree = 0;
     private long collectedProduct = 0;
+    private long collectedProductMax = 10;
     private static final int TIMER_THRESHOLD = 10;
 
     FirebaseDatabase database;
@@ -179,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
 
         // initializing views
         btnSpin = findViewById(R.id.btnSpin);
+        b_wallet = findViewById(R.id.b_wallet);
         ivWheel = findViewById(R.id.ivWheel);
         deg = findViewById(R.id.deg);
         wallet = findViewById(R.id.wallet);
@@ -422,12 +425,12 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         amountModels.add(a10);
         amountModels.add(a11);
         amountModels.add(a12);
-        amountModels.add(a13);
+        /*amountModels.add(a13);
         amountModels.add(a14);
         amountModels.add(a15);
         amountModels.add(a16);
         amountModels.add(a17);
-        amountModels.add(a18);
+        amountModels.add(a18);*/
 
 
         timeManager = new TimeManager(auth.uid());
@@ -606,73 +609,86 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
                             float fromDegree = 0;
                             float toDegree = 360 * 6 + stopAngle; // 6 divisions
 
-                            ObjectAnimator animator = ObjectAnimator.ofFloat(ivWheel, "rotation", fromDegree, toDegree);
-                            animator.setDuration(spinDuration);
-                            animator.setInterpolator(new AccelerateDecelerateInterpolator());
-                            animator.start();
+                            ObjectAnimator animator = null;
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                                animator = ObjectAnimator.ofFloat(ivWheel, "rotation", fromDegree, toDegree);
+                            }
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                                animator.setDuration(spinDuration);
+                            }
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                                animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                            }
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                                animator.start();
+                            }
 
-                            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                                @Override
-                                public void onAnimationUpdate(ValueAnimator animation) {
-                                    float animatedValue = (float) animation.getAnimatedValue("rotation");
-                                    deg.setText(String.valueOf(animatedValue % 360)); // Display the current degree
-                                }
-                            });
-
-                            animator.addListener(new Animator.AnimatorListener() {
-                                @Override
-                                public void onAnimationStart(Animator animation) {
-                                    // Disable the spin button during the animation
-                                    btnSpin.setEnabled(false);
-                                }
-
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    // Re-enable the spin button after the animation
-                                    btnSpin.setEnabled(true);
-
-                                    // Calculate the result based on the final degree
-                                    float finalDegree = (float) ivWheel.getRotation() % 360;
-                                    int division = (int) (finalDegree / 60);
-
-                                    // Determine the result based on the division
-                                    switch (division) {
-                                        case 0:
-                                            isElligible_(100, current_selected);
-                                            break;
-                                        case 1:
-                                            isElligible_(100, current_selected);
-                                            break;
-                                        case 2:
-                                            isElligible_(800, current_selected);
-                                            break;
-                                        case 3:
-                                            isElligible_(800, current_selected);
-                                            break;
-                                        case 4:
-                                            isElligible_(500, current_selected);
-                                            break;
-                                        case 5:
-                                            isElligible_(500, current_selected);
-                                            break;
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                                    @Override
+                                    public void onAnimationUpdate(ValueAnimator animation) {
+                                        float animatedValue = (float) animation.getAnimatedValue("rotation");
+                                        deg.setText(String.valueOf(animatedValue % 360)); // Display the current degree
                                     }
-                                }
+                                });
+                            }
 
-                                @Override
-                                public void onAnimationCancel(Animator animation) {
-                                    // Handle animation cancellation if needed
-                                }
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                                animator.addListener(new Animator.AnimatorListener() {
+                                    @Override
+                                    public void onAnimationStart(Animator animation) {
+                                        // Disable the spin button during the animation
+                                        btnSpin.setEnabled(false);
+                                    }
 
-                                @Override
-                                public void onAnimationRepeat(Animator animation) {
-                                    // Handle animation repeat if needed
-                                }
-                            });
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        // Re-enable the spin button after the animation
+                                        btnSpin.setEnabled(true);
+
+                                        // Calculate the result based on the final degree
+                                        float finalDegree = (float) ivWheel.getRotation() % 360;
+                                        int division = (int) (finalDegree / 60);
+
+                                        // Determine the result based on the division
+                                        switch (division) {
+                                            case 0:
+                                                isElligible_(100, current_selected);
+                                                break;
+                                            case 1:
+                                                isElligible_(100, current_selected);
+                                                break;
+                                            case 2:
+                                                isElligible_(800, current_selected);
+                                                break;
+                                            case 3:
+                                                isElligible_(800, current_selected);
+                                                break;
+                                            case 4:
+                                                isElligible_(500, current_selected);
+                                                break;
+                                            case 5:
+                                                isElligible_(500, current_selected);
+                                                break;
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onAnimationCancel(Animator animation) {
+                                        // Handle animation cancellation if needed
+                                    }
+
+                                    @Override
+                                    public void onAnimationRepeat(Animator animation) {
+                                        // Handle animation repeat if needed
+                                    }
+                                });
+                            }
                         }
                         else {
 
                                // Toast.makeText(MainActivity.this, "No Enough Assert To Spin \n You Need At least 5000 Tsh In Your Assert ", Toast.LENGTH_SHORT).show();
-                                Note2("No Enough Balance","You Cannot Spin Due To Low Or Empty Balance ,Upgrade Your Balance To At least 1500Tsh To Receive VIP 1");
+                                Note2("Salio halitoshi","Huwezi zungusha gurudumu mpaka utakapo weka pesa kiasi cha chini cha kuanzia shilingi 5000 kupata VIP 1");
                         }
 
 
@@ -701,6 +717,16 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         });
 
         profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isLogged()){
+                    auth_view.setVisibility(View.VISIBLE);
+                }else {
+                    ShowAd(Profile.class);
+
+                }
+            }
+        }); b_wallet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!isLogged()){
@@ -992,7 +1018,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
                         });
                     }else {
                         total_rounds = (long) snapshot.getValue();
-                        btnSpin.setText("SPIN");
+                        btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
                         network.setVisibility(View.GONE);
                         btnSpin.setVisibility(View.VISIBLE);
 
@@ -1018,10 +1044,13 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
                     }else {
                         collectedProduct = (long) snapshot.getValue();
                         TextView collection = findViewById(R.id.product);
+                        btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
                         if(collectedProduct > 1){
                             collection.setText(collectedProduct +" Products Collected.");
+                            btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
                         }else {
                             collection.setText(collectedProduct +" Product Collected.");
+                            btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
                         }
 
                         if(collectedProduct >= 10){
@@ -1294,6 +1323,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
                             if(task.isComplete()){
                               //  Toast.makeText(MainActivity.this, "c", Toast.LENGTH_SHORT).show();
                                 tic = false;
+                                btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
                                 btnSpin.setVisibility(View.VISIBLE);
                                 reset.setVisibility(View.GONE);
                                 btnSpin.setClickable(true);
@@ -1304,6 +1334,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
 
                     tic = false;
                     btnSpin.setVisibility(View.VISIBLE);
+                    btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
                     reset.setVisibility(View.GONE);
                     btnSpin.setClickable(true);
                     reference.child("products").setValue(0);
@@ -1326,6 +1357,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
                                // Toast.makeText(MainActivity.this, "c", Toast.LENGTH_SHORT).show();
                                 tic = false;
                                 btnSpin.setVisibility(View.VISIBLE);
+                                btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
                                 reset.setVisibility(View.GONE);
                                 btnSpin.setClickable(true);
                                 reference.child("products").setValue(0);
@@ -1357,6 +1389,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
     @Override
     protected void onStart() {
         checkWorkingDaysAndTime();
+        btnSpin.setText(collectedProductMax - collectedProduct + " SPIN");
         try {
             PlayBackground();
         } catch (IOException e) {
@@ -1482,11 +1515,11 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
                     }else{
                         Toast(
                                 finalI,
-                                "Tsh"+String.format(Locale.US,"%,d",amountModels.get(finalI).getAmount())+" Deposit",
-                                "Tsh"+String.format(Locale.US,"%,d",(amountModels.get(finalI).getProfit()+ amountModels.get(finalI).getAmount()))+" Profit",
-                                amountModels.get(finalI).getDays()+"Days return",
+                                "Weka Tsh"+String.format(Locale.US,"%,d",amountModels.get(finalI).getAmount()),
+                                "Pata Faida Ya Tsh"+String.format(Locale.US,"%,d",(amountModels.get(finalI).getProfit()+ amountModels.get(finalI).getAmount())),
+                                "Mzunguko Ni Siku "+amountModels.get(finalI).getDays(),
                                 "",
-                                ""
+                                "TANGAZA BIDHAA KWENYE MASOKO ONLINE KWA MFUMO WA KU SPIN KUPITIA PROGRAMU YA PANDORA SPIN LLC NA UKUSANYE FEDHA YA FAIDA KILA SIKU"
                         );
                     }
                    // Toast(finalI,"Level "+amountModels.get(finalI).getName()+" \n Deposit Amount Required is "+String.format(Locale.US,"%,d",amountModels.get(finalI).getAmount())+"Tsh At the end of "+amountModels.get(finalI).getDays()+"days you will generate a profit of "+String.format(Locale.US,"%,d",amountModels.get(finalI).getProfit())+"Tsh,\n A Total Profit Of "+String.format(Locale.US,"%,d",(amountModels.get(finalI).getProfit()+ amountModels.get(finalI).getAmount()))+"Tsh\nCAUTION: The deposit amount should not exceed the Level Limit");
@@ -1597,8 +1630,8 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         views.setText("Viewed by "+ random+"k");
         pannel_.setVisibility(View.VISIBLE);
         Glide.with(getApplicationContext()).load(spin_products.get(index).getImage()).into(Pimage);
-        vipInfo.setText(name+" Collected");
-        pp.setText("You've Earned Profit By Advertising Our Product to reach more customers");
+        vipInfo.setText("Umekusanya "+name);
+        pp.setText("Umepata faida kwa kutangaza bidhaa yetu ili kufikia wateja zaidi.");
         final TextView promoTextView = findViewById(R.id.promo);
         promoTextView.setSelected(true);
 
@@ -1846,8 +1879,8 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
     private void showUpdateDialogg() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Update Available")
-                .setMessage("A new version of Pandora Spin is available. Please update to the latest version for bug fixes and new features.")
+        builder.setTitle("Sasisha Inapatikana")
+                .setMessage("Toleo jipya la Pandora Spin linapatikana. Tafadhali sasisha hadi toleo jipya zaidi la marekebisho ya hitilafu na vipengele vipya.")
                 .setPositiveButton("Update", (dialog, which) -> launchAppStore())
                 .setCancelable(false); // Set dialog as not cancelable
 

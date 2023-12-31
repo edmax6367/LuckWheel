@@ -78,41 +78,56 @@ public class ChatRoom extends AppCompatActivity {
 
         DatabaseReference room = database.getReference("Room");
 
-
-        room.addChildEventListener(new ChildEventListener() {
+        room.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String key = snapshot.getKey();
-                String id = snapshot.child("id").getValue(String.class);
-                String message = snapshot.child("message").getValue(String.class);
-                String image = snapshot.child("image").exists()? snapshot.child("image").getValue(String.class):"";
-                //long time = snapshot.child("time").getValue(Long.class);
+            public void onDataChange(@NonNull DataSnapshot snapshots) {
+                message_list.clear();
+                for(DataSnapshot snapshot:snapshots.getChildren()){
+                    String key = snapshot.getKey();
+                    String id = snapshot.child("id").getValue(String.class);
+                    String message = snapshot.child("message").getValue(String.class);
+                    String image = snapshot.child("image").exists()? snapshot.child("image").getValue(String.class):"";
+                    //long time = snapshot.child("time").getValue(Long.class);
 
-                boolean reply = Boolean.TRUE.equals(snapshot.child("reply").getValue(Boolean.class));
+                    boolean reply = Boolean.TRUE.equals(snapshot.child("reply").getValue(Boolean.class));
 
-                RoomModel message_data = new RoomModel();
-                message_data.setKey(key);
-                message_data.setId(id);
-                message_data.setMessage(message);
-                //message_data.setTime(time);
-                message_data.setImage(image);
+                    RoomModel message_data = new RoomModel();
+                    message_data.setKey(key);
+                    message_data.setId(id);
+                    message_data.setMessage(message);
+                    //message_data.setTime(time);
+                    message_data.setImage(image);
 
-                if(reply){
+                    if(reply){
 
-                    String content = snapshot.child("content").getValue(String.class);
-                    String content_key = snapshot.child("content_key").getValue(String.class);
+                        String content = snapshot.child("content").getValue(String.class);
+                        String content_key = snapshot.child("content_key").getValue(String.class);
 
 
-                    message_data.setReply(true);
-                    message_data.setContent(content);
-                    message_data.setContent_key(content_key);
+                        message_data.setReply(true);
+                        message_data.setContent(content);
+                        message_data.setContent_key(content_key);
+                    }
+
+                    message_list.add(message_data);
+                    message_view.scrollToPosition(message_list.size()-1);
+
+                    adapter = new RoomAdapter(message_list, getApplicationContext(),auth.uid().toString(),database);
+                    message_view.setAdapter(adapter);
                 }
-
-                message_list.add(message_data);
                 message_view.scrollToPosition(message_list.size()-1);
 
-                adapter = new RoomAdapter(message_list, getApplicationContext(),auth.uid().toString(),database);
-                message_view.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        /*room.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
 
             }
@@ -151,9 +166,8 @@ public class ChatRoom extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
 
-        message_view.scrollToPosition(message_list.size()-1);
 
         send_btn.setOnClickListener(new View.OnClickListener() {
             @Override

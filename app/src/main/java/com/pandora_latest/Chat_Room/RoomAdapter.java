@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,6 +118,11 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if(snapshot.exists()){
+                        if(snapshot.getValue(String.class).contains("Pandora") || snapshot.getValue(String.class).contains("Service")){
+                            holder.name_received.setTextColor(Color.BLUE);
+                        }else {
+                            holder.name_received.setTextColor(Color.BLACK);
+                        }
                         holder.name_received.setText(snapshot.getValue(String.class));
                         name[0] = snapshot.getValue(String.class);
                     }

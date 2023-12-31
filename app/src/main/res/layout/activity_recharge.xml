@@ -22,26 +22,32 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="My Wallet"
+            android:text="Wallet Yangu"
+
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
 
 
+
         <TextView
             android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text=""
+            android:padding="10dp"
+            android:background="@drawable/rounded_background"
+            android:layout_marginTop="5dp"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="19sp" />
+
 
         <TextView
             android:id="@+id/wallet_balance"
@@ -49,9 +55,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="0 TSH"
+            android:padding="10dp"
+            android:background="@drawable/rounded_background"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="19sp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +74,7 @@
                 android:layout_margin="5dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="withdraw"
+                android:text="Toa pesa"
                 android:visibility="gone"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -77,7 +86,7 @@
                 android:layout_margin="5dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="Recharge"
+                android:text="Weka pesa"
                 android:visibility="gone"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -108,7 +117,7 @@
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Withdraw"
+            android:text="Toa Pesa"
 
             android:textAlignment="center"
             android:textSize="24sp"
@@ -127,7 +136,7 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:textColor="@color/black"
-                android:text="Choose Your Wallet Network Type"
+                android:text="Chagua mtandao"
                 android:textAlignment="center" />
 
             <Spinner
@@ -149,7 +158,7 @@
             android:ems="10"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:hint="Enter Amount"
+            android:hint="Ingiza kiasi"
             android:inputType="number"
             android:padding="12dp"
             android:textAlignment="center" />
@@ -163,7 +172,7 @@
             android:ems="10"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:hint="Enter Account Name"
+            android:hint="Jina la akaunti"
             android:inputType="textPersonName"
             android:padding="12dp"
             android:textAlignment="center" />
@@ -180,13 +189,13 @@
             android:id="@+id/w_r"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WITHDRAW" />
+            android:text="TOA PESA" />
 
         <TextView
             android:id="@+id/withdraw_limit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your account has a withdraw limit of `SATURDAY ONLY`, Invite 3 users to remove withdraw limit once they deposit a minimum amount of Tsh1,500"
+            android:text="Unaruhusiwa kutoa pesa Jumamosi tu, alika marafiki wa tatu ili account yako iweze kutoa pesa mda wowote. rafiki atakaye alikwa anatakiwa kuanza na kiasi cha chini ambacho ni shilingi 5000"
             android:textColor="@color/white"
             android:padding="10dp"
             android:gravity="center|start"
@@ -215,7 +224,7 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Recharge"
+            android:text="Weka pesa"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -223,7 +232,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Make sure dates of the uploaded transaction is latest and accurate, we wont be responsible for the lost of your funds due to inaccurate transaction details. "
+            android:text="Hakiki muamala wako na wa hivi karibuni , Hatutohusika na upotevu wa hela pale ambapo hautokuwa makini na miamala yako "
             android:textAlignment="center"
             android:textColor="#FF0000"
             android:textSize="14sp"
@@ -236,7 +245,7 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/rounded_background"
             android:ems="10"
-            android:hint="Enter Amount"
+            android:hint="Weka kiasi"
             android:inputType="number"
             android:padding="12dp"
             android:textAlignment="center"
@@ -250,7 +259,7 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/rounded_background"
             android:ems="10"
-            android:hint="Paste your transaction message here"
+            android:hint="Bandika message ya muamala wako hapa"
             android:inputType="textMultiLine"
             android:padding="12dp"
             android:textAlignment="textStart"
@@ -275,7 +284,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Scan message to recharge" />
+            android:text="Hakiki message" />
     </LinearLayout>
 
     <LinearLayout
@@ -299,7 +308,7 @@
             android:background="@drawable/rounded_background2"
             android:padding="4dp"
             android:textAlignment="center"
-            android:text="How to deposit money ?"
+            android:text="Jinsi ya kuweka pesa ?"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -338,7 +347,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text="Transactions Methods"
+        android:text="Njia za Manunuzi"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -391,7 +400,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="#EDEDED"
-                android:text="Transaction" />
+                android:text="Malipo" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -399,7 +408,7 @@
                 android:gravity="center"
                 android:textColor="#EDEDED"
                 android:layout_height="wrap_content"
-                android:text="Type" />
+                android:text="Aina" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -407,7 +416,7 @@
                 android:gravity="end"
                 android:textColor="#EDEDED"
                 android:layout_height="wrap_content"
-                android:text="State" />
+                android:text="Hali" />
 
         </LinearLayout>
 
@@ -432,7 +441,7 @@
                 android:gravity="center"
                 android:textColor="#FF5722"
                 android:layout_height="wrap_content"
-                android:text="Recharge" />
+                android:text="Weka pesa" />
 
             <TextView
                 android:layout_width="match_parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#5247B0"
     tools:context=".About">
 
     <ScrollView
@@ -25,7 +25,10 @@
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:textAlignment="textStart"
-               android:textColor="@color/black"
+               android:textColor="@color/white"
+               android:textSize="17sp"
+               android:justificationMode="none"
+               android:textStyle="normal"
                android:text="@string/about_pandora"
                />
         </LinearLayout>

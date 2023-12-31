@@ -12,6 +12,6 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        getSupportActionBar().setTitle("About And Terms Of Use");
+        getSupportActionBar().hide();
     }
 }

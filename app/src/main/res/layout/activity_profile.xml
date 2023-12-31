@@ -21,6 +21,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:padding="10dp">
 
         <ImageView
@@ -59,6 +60,7 @@
             android:id="@+id/image"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:visibility="gone"
             android:src="@drawable/profile" />
 
 
@@ -68,6 +70,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:padding="5dp"
+            android:background="@drawable/rounded_background_m"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/user_name"
@@ -104,6 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_background_m"
         android:orientation="horizontal"
         android:padding="12dp">
 
@@ -112,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Assets"
+            android:text="Mali"
             android:textAlignment="center"
             android:textSize="19sp"
             android:textColor="@color/white"
@@ -140,6 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_background_m"
         android:orientation="horizontal"
         android:padding="12dp">
 
@@ -148,7 +154,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Profit"
+            android:text="Faida"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="19sp"
@@ -174,6 +180,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_background_m"
         android:orientation="horizontal"
         android:padding="12dp">
 
@@ -182,7 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Friends Invited"
+            android:text="Rafiki Waalikwa"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="19sp"
@@ -234,7 +241,7 @@
         android:id="@+id/deletion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete Account"
+        android:text="Futa Account"
         android:textColor="@color/white"
         android:textStyle="bold" />
 
@@ -292,15 +299,14 @@
     app:layout_constraintBottom_toBottomOf="parent" />
 <TextView
     android:id="@+id/pp"
-    android:layout_width="wrap_content"
+    android:layout_width="1000dp"
     android:layout_height="wrap_content"
-    android:text="Benefit from future gifts and bonuses by inviting"
+    android:text="Unaruhusiwa kutoa pesa Jumamosi tu, alika marafiki wa tatu ili account yako iweze kutoa pesa mda wowote. rafiki atakaye alikwa anatakiwa kuanza na kiasi cha chini ambacho ni shilingi 5000"
     android:textColor="#FFFFFF"
     android:singleLine="true"
     android:ellipsize="none"
     android:padding="2dp"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
 
 

@@ -202,7 +202,7 @@ public class QubeAuth {
                     activeService = true;
                     //Toast.makeText(context, "Active Service", Toast.LENGTH_LONG).show();
                 }else{
-                    activeService = true;
+                    activeService = false;
                    // Toast.makeText(context, "InActive Service", Toast.LENGTH_LONG).show();
                 }
             }

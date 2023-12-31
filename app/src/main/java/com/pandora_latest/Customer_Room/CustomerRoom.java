@@ -201,7 +201,7 @@ public class CustomerRoom extends AppCompatActivity {
                             else{
                                 bot_respond =false;
 
-                                HashMap<String,Object> message_data = new HashMap<>();
+                               /* HashMap<String,Object> message_data = new HashMap<>();
                                 String _key = room.push().getKey();
                                 message_data.put("id","Customer Support");
                                 message_data.put("message",defaultResponse);
@@ -218,7 +218,7 @@ public class CustomerRoom extends AppCompatActivity {
                                             Toast.makeText(CustomerRoom.this, "Something went wrong", Toast.LENGTH_LONG).show();
                                         }
                                     }
-                                });
+                                });*/
 
                             }
                         }

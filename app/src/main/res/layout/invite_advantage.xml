@@ -46,7 +46,7 @@
                         android:background="#5247B0"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Invite a friend earn together"
+                        android:text="Alika marafiki"
                         android:textColor="@color/white"
                         android:textSize="13sp"
                         android:textStyle="bold" />
@@ -102,14 +102,14 @@
 
 
                                 <TextView
-                                    android:layout_width="360dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/playfair_normal"
                                     android:padding="10dp"
-                                    android:text="Instant Withdraws"
+                                    android:text="Toa pesa wakati wowote"
                                     android:textAlignment="textStart"
                                     android:textColor="#FFFFFF"
-                                    android:textSize="19sp"
+                                    android:textSize="18sp"
                                     android:textStyle="bold" />
 
 
@@ -121,7 +121,7 @@
                                     android:drawableStart="@drawable/poin_squire"
                                     android:fontFamily="@font/playfair_normal"
                                     android:padding="5dp"
-                                    android:text="  Lift limitations"
+                                    android:text="  Ondoa vizuizi"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/white"
                                     android:textSize="17sp"
@@ -135,7 +135,7 @@
                                     android:drawableStart="@drawable/poin_squire"
                                     android:fontFamily="@font/playfair_normal"
                                     android:padding="5dp"
-                                    android:text="  Instant credit"
+                                    android:text="  Mapokeo ya haraka"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/white"
                                     android:textSize="17sp"
@@ -148,7 +148,7 @@
                                     android:drawableStart="@drawable/poin_squire"
                                     android:fontFamily="@font/playfair_normal"
                                     android:padding="5dp"
-                                    android:text="  Fast Processing"
+                                    android:text="  Malipo ya haraka"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/white"
                                     android:textSize="17sp"
@@ -301,7 +301,7 @@ It applies to each recharge the user makes. You will continue to receive a small
                 android:layout_height="wrap_content"
                 android:background="#2FFF00"
                 android:padding="15dp"
-                android:text="INVITE A FRIEND"
+                android:text="ALIKA RAFIKI"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="13sp"

@@ -34,6 +34,7 @@
                 android:textColor="#38CD33"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/profile"
                 app:layout_constraintStart_toEndOf="@+id/level"
@@ -43,12 +44,15 @@
                 android:id="@+id/profile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_margin="10dp"
                 android:padding="5dp"
+                android:src="@drawable/profile"
                 android:tooltipText="Profile"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/profile" />
+                app:layout_constraintVertical_bias="0.325" />
 
             <TextView
                 android:id="@+id/level"
@@ -56,10 +60,25 @@
                 android:layout_height="wrap_content"
                 android:text="VIP 0"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.49" />
+
+            <TextView
+                android:id="@+id/b_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wallet"
+                android:textColor="#123EDC"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:drawableEnd="@drawable/go_to_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
@@ -79,13 +98,17 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/ivWheel"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:cardCornerRadius="150dp"
-        android:layout_marginStart="55dp"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="46dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="55dp"
+        app:cardCornerRadius="300dp"
+        app:cardBackgroundColor="#00000000"
         app:cardElevation="0dp"
-        android:layout_marginEnd="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSpin"
+        app:layout_constraintDimensionRatio="8:8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vip_container">
@@ -100,77 +123,103 @@
             app:layout_constraintTop_toBottomOf="@+id/ivWheel"
             app:srcCompat="@drawable/wheel_new" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:columnCount="2"
+            app:columnOrderPreserved="true"
+            app:rowCount="2"
+            app:rowOrderPreserved="true">
 
             <ImageView
                 android:id="@+id/flash"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="40dp"
-                android:rotation="-17"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="25dp"
+                android:rotation="55"
+                android:padding="10dp"
                 android:src="@drawable/psl"
+                app:layout_columnWeight="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_rowWeight="1" />
 
             <ImageView
                 android:id="@+id/bag"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="120dp"
-                android:rotation="-10"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="33dp"
+                android:rotation="130"
+                android:padding="10dp"
                 android:src="@drawable/psl"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
 
             <ImageView
                 android:id="@+id/camera"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="72dp"
-                android:layout_marginBottom="48dp"
-                android:rotation="-160"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="45dp"
                 android:src="@drawable/psl"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
 
             <ImageView
                 android:id="@+id/watch"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginEnd="76dp"
-                android:layout_marginBottom="48dp"
-                android:rotation="-160"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="10dp"
+                android:rotationY="180"
+                android:padding="10dp"
                 android:src="@drawable/psl"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+
 
             <ImageView
                 android:id="@+id/phones"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="120dp"
-                android:rotation="-10"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="25dp"
+                android:rotation="300"
+                android:padding="10dp"
                 android:src="@drawable/psl"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+
+                />
 
             <ImageView
                 android:id="@+id/iphone"
-                android:layout_width="60dp"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
-                android:layout_marginEnd="76dp"
-                android:layout_marginBottom="200dp"
-                android:rotation="-10"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="25dp"
+                android:rotation="-130"
+                android:padding="10dp"
                 android:src="@drawable/psl"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                />
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+
+        <!-- <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+
+
+         </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     </androidx.cardview.widget.CardView>
 
@@ -190,10 +239,11 @@
         android:id="@+id/product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 Products Collected"
+        android:text="0 Bidhaa zilizokusanywa"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="@+id/ivWheel"
         app:layout_constraintHorizontal_bias="0.503"
@@ -234,20 +284,20 @@
         android:layout_width="111dp"
         android:layout_height="40dp"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="161dp"
+        android:layout_marginBottom="30dp"
         android:background="#8BC34A"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:paddingLeft="5dp"
+        android:paddingTop="10dp"
         android:paddingRight="5dp"
-        android:text="SPIN"
+        android:paddingBottom="10dp"
+        android:text="10 SPIN"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivWheel" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 
@@ -487,7 +537,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="-9dp"
-
+android:visibility="gone"
             android:paddingTop="0dp"
             android:paddingStart="2dp"
             android:paddingEnd="2dp"
@@ -554,11 +604,14 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/dock"
         android:orientation="horizontal"
-        android:layout_marginEnd="10dp"
+        android:paddingTop="1dp"
         app:layout_constraintBottom_toTopOf="@+id/news"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -571,11 +624,12 @@
 
             <ImageView
                 android:id="@+id/invite"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="12dp"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="35dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
+
                 android:tooltipText="Invite"
                 app:layout_constraintBottom_toTopOf="@+id/news"
                 app:layout_constraintStart_toStartOf="parent"
@@ -583,12 +637,13 @@
 
             <TextView
 
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Invite"
-                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:text="Alika"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/invite"
                 app:layout_constraintEnd_toEndOf="@+id/invite"
@@ -603,25 +658,25 @@
 
             <ImageView
                 android:id="@+id/rr"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="12dp"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="35dp"
                 android:layout_weight="1"
+                android:rotation="0"
                 android:scaleType="fitXY"
                 android:tooltipText="Invite"
-                android:rotation="0"
                 app:layout_constraintBottom_toTopOf="@+id/news"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/recharge" />
 
             <TextView
 
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Recharge"
-                android:textColor="@color/white"
+                android:text="Weka pesa"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/invite"
                 app:layout_constraintEnd_toEndOf="@+id/invite"
@@ -636,25 +691,25 @@
 
             <ImageView
                 android:id="@+id/ww"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="12dp"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="35dp"
                 android:layout_weight="1"
+                android:rotation="0"
                 android:scaleType="fitXY"
                 android:tooltipText="Invite"
-                android:rotation="0"
                 app:layout_constraintBottom_toTopOf="@+id/news"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/withdraw" />
 
             <TextView
 
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Withdraw"
-                android:textColor="@color/white"
+                android:text="Toa pesa"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/invite"
                 app:layout_constraintEnd_toEndOf="@+id/invite"
@@ -665,13 +720,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/cc"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="12dp"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="35dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:tooltipText="Invite"
@@ -681,12 +737,12 @@
 
             <TextView
 
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Chat"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/invite"
                 app:layout_constraintEnd_toEndOf="@+id/invite"
@@ -697,6 +753,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:visibility="gone"
+
             android:orientation="vertical">
 
             <ImageView
@@ -717,8 +775,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Support"
-                android:textColor="@color/white"
+                android:text="Huduma"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/invite"
                 app:layout_constraintEnd_toEndOf="@+id/invite"
@@ -729,8 +787,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:visibility="visible"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/abt"
@@ -750,8 +808,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="About"
-                android:textColor="@color/white"
+                android:text="Kuhusu"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/invite"
                 app:layout_constraintEnd_toEndOf="@+id/invite"
@@ -776,7 +834,7 @@
 
     <include
         android:id="@+id/resources_loading"
-        android:visibility="visible"
+        android:visibility="gone"
         layout="@layout/loading_products"/>
     <include
         android:id="@+id/reset"

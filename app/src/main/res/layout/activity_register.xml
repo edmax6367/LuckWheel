@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -60,7 +61,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Welcome into a perfect world of earning on your mobile\n Let's Get to know You, Start by filling your full name below."
+                        android:text="Karibu kwenye ulimwengu wa kupata kipato kupitia simu yako\n Anza kwa kujaza Jina lako."
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
@@ -75,7 +76,7 @@
                         android:background="@drawable/rounded_input_background"
                         android:ems="6"
                         android:gravity="start"
-                        android:hint="Username"
+                        android:hint="Jina Sanifu"
                         android:inputType="textPersonName"
                         android:padding="15dp"
                         android:textAlignment="textStart"
@@ -90,7 +91,7 @@
                         android:layout_weight="1"
                         android:drawableEnd="@drawable/next"
                         android:padding="2dp"
-                        android:text="Existing user ? Login here"
+                        android:text="Ni mtumiaji ? Ingia hapa"
                         android:textAlignment="center"
                         android:textColor="#2196F3"
                         android:textSize="16sp"
@@ -105,7 +106,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="20dp"
                         android:background="@drawable/rounded_button_background"
-                        android:text="Get started" />
+                        android:text="Anza Sasa" />
 
                 </LinearLayout>
 
@@ -126,7 +127,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Hey Username Let's Set Up your Phone Number Make Sure to begin with your Country Code eg ${255} and do not include 0 currently we support Airtel, Vodacom, Halotel and Tigo"
+                        android:text="Habari Mteja Weka namba yako ya simu hakikisha haianzi na sifuri na iwe na kodi ya inchi mfano 2557, Mitandao tunayoruhusu  Airtel, Vodacom, Halotel na Tigo"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
@@ -160,7 +161,7 @@
                             android:background="@drawable/emptybg"
                             android:ems="6"
                             android:gravity="start"
-                            android:hint="Phone"
+                            android:hint="Namba ya Simu"
                             android:inputType="phone"
                             android:textAlignment="textStart"
                             android:textColor="@color/black"
@@ -176,7 +177,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="20dp"
                         android:background="@drawable/rounded_button_background"
-                        android:text="Continue" />
+                        android:text="Endelea" />
 
                 </LinearLayout>
 
@@ -197,7 +198,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Hey Username Let's Set Up your Security Pin for phone Make Sure to create a string pin or password with 6 or more digits to secure your account."
+                        android:text="Habari Mteja Weka nywila yenye urefu wa tarakimu 6 kulinda akaunti yako ya Pandora Spin LLC"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
@@ -212,7 +213,7 @@
                         android:background="@drawable/rounded_input_background"
                         android:ems="6"
                         android:gravity="start"
-                        android:hint="Password"
+                        android:hint="Nywila"
                         android:inputType="textVisiblePassword"
                         android:padding="15dp"
                         android:textAlignment="textStart"
@@ -227,7 +228,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="20dp"
                         android:background="@drawable/rounded_button_background"
-                        android:text="Register" />
+                        android:text="Jisajili" />
 
                 </LinearLayout>
 
@@ -258,7 +259,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="To login Please enter the number you used when registering \nNote: Do not include a country code Your number must start with 0"
+                        android:text="Tumia namba ya simu uliotumia kujisajiri na Pandora Spin LLC \n Muhimu : Number yako inatakiwa ianze na sifuri mfano : 07"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
@@ -292,7 +293,7 @@
                             android:background="@drawable/emptybg"
                             android:ems="6"
                             android:gravity="start"
-                            android:hint="Phone"
+                            android:hint="Namba ya Simu"
                             android:inputType="phone"
                             android:textAlignment="textStart"
                             android:textColor="@color/black"
@@ -308,7 +309,7 @@
                         android:layout_weight="1"
                         android:drawableEnd="@drawable/next"
                         android:padding="2dp"
-                        android:text="New User ? Create account "
+                        android:text="Mtumiaji Mpya ? Jisajiri hapa "
                         android:textAlignment="center"
                         android:textColor="#2196F3"
                         android:textSize="16sp"
@@ -322,7 +323,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="20dp"
                         android:background="@drawable/rounded_button_background"
-                        android:text="Continue" />
+                        android:text="Endelea" />
 
 
                 </LinearLayout>
@@ -344,7 +345,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Please enter your registered Password to Finish the login process."
+                        android:text="Tafadhali ingiza nywila yako"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
@@ -359,7 +360,7 @@
                         android:background="@drawable/rounded_input_background"
                         android:ems="6"
                         android:gravity="start"
-                        android:hint="Password"
+                        android:hint="Nywila"
                         android:inputType="textVisiblePassword"
                         android:padding="15dp"
                         android:textAlignment="textStart"
@@ -374,7 +375,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="20dp"
                         android:background="@drawable/rounded_button_background"
-                        android:text="Login" />
+                        android:text="Ingia" />
 
                 </LinearLayout>
 

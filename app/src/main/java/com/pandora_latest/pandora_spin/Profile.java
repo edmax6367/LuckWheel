@@ -216,8 +216,8 @@ public class Profile extends AppCompatActivity {
         final int screenWidth = displayMetrics.widthPixels;
         final int Textlength = tt.length() * 13;
 
-        final TranslateAnimation translateAnimation = new TranslateAnimation(Textlength, -Textlength, 0, 0);
-        translateAnimation.setDuration(10000);
+        final TranslateAnimation translateAnimation = new TranslateAnimation(0, -Textlength, 0, 0);
+        translateAnimation.setDuration(70000);
         translateAnimation.setRepeatCount(Animation.INFINITE);
         pp.startAnimation(translateAnimation);
 
