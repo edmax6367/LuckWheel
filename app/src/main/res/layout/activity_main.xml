@@ -72,9 +72,10 @@
                 android:id="@+id/b_wallet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wallet"
-                android:textColor="#123EDC"
-                android:textSize="19sp"
+                android:text="WALLET"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:drawableEnd="@drawable/go_to_profile"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -333,16 +334,14 @@
         />
 
 
-
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:visibility="gone"
         android:background="@color/black"
         android:nestedScrollingEnabled="false"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -667,7 +666,7 @@ android:visibility="gone"
                 android:tooltipText="Invite"
                 app:layout_constraintBottom_toTopOf="@+id/news"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/recharge" />
+                app:srcCompat="@drawable/deposit_icon" />
 
             <TextView
 
@@ -700,7 +699,7 @@ android:visibility="gone"
                 android:tooltipText="Invite"
                 app:layout_constraintBottom_toTopOf="@+id/news"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/withdraw" />
+                app:srcCompat="@drawable/withdraw_icon" />
 
             <TextView
 
@@ -733,7 +732,7 @@ android:visibility="gone"
                 android:tooltipText="Invite"
                 app:layout_constraintBottom_toTopOf="@+id/news"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/pandora_chat" />
+                app:srcCompat="@drawable/whatsapp_icon" />
 
             <TextView
 
@@ -834,7 +833,7 @@ android:visibility="gone"
 
     <include
         android:id="@+id/resources_loading"
-        android:visibility="gone"
+        android:visibility="visible"
         layout="@layout/loading_products"/>
     <include
         android:id="@+id/reset"

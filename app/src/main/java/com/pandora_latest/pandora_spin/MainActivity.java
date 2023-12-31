@@ -55,6 +55,7 @@ import com.pandora_latest.Customer_Room.CustomerRoom;
 import com.pandora_latest.News.bottomAnouncementAdapter;
 import com.pandora_latest.PandoraBot.ProductModel;
 import com.pandora_latest.QubeAuth.QubeAuth;
+import com.pandora_latest.RewardCenter.InvitesListener;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
     FirebaseDatabase database;
     DatabaseReference reference;
     QubeAuth auth;
+    InvitesListener invitesListener;
 
     String uid;
     String phone;
@@ -198,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
 
         database = FirebaseDatabase.getInstance();
         auth = new QubeAuth(getApplicationContext(),database,null);
+        invitesListener = new InvitesListener(getApplicationContext(),database,null);
         btnSpin.setVisibility(View.GONE);
 
         b0 = findViewById(R.id.button0);
@@ -285,28 +288,28 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         });
 
         a1.setAmount(5000);
-        a1.setProfit(8600-5000);
+        a1.setProfit(9000-5000);
         a1.setVIP(1);
         a1.setName("VIP 1");
         a1.setpReturn(0);
         a1.setDays(7);
 
         a2.setAmount(15000);
-        a2.setProfit(21000-15000);
+        a2.setProfit(23000-15000);
         a2.setVIP(2);
         a2.setName("VIP 2");
         a2.setpReturn(0);
         a2.setDays(7);
 
         a3.setAmount(25000);
-        a3.setProfit(32000-25000);
+        a3.setProfit(35000-25000);
         a3.setVIP(3);
         a3.setName("VIP 3");
         a3.setpReturn(0);
         a3.setDays(7);
 
         a4.setAmount(35000);
-        a4.setProfit(43000-35000);
+        a4.setProfit(47000-35000);
         a4.setVIP(4);
         a4.setName("VIP 4");
         a4.setpReturn(0);
@@ -328,21 +331,21 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         a6.setDays(7);
 
         a7.setAmount(200000);
-        a7.setProfit(350000-200000);
+        a7.setProfit(300000-200000);
         a7.setVIP(1);
         a7.setName("VVIP 1");
         a7.setpReturn(0);
         a7.setDays(30);
 
         a8.setAmount(300000);
-        a8.setProfit(450000-300000);
+        a8.setProfit(400000-300000);
         a8.setVIP(2);
         a8.setName("VVIP 2");
         a8.setpReturn(0);
         a8.setDays(30);
 
         a9.setAmount(400000);
-        a9.setProfit(550000-400000);
+        a9.setProfit(500000-400000);
         a9.setVIP(3);
         a9.setName("VVIP 3");
         a9.setpReturn(0);
@@ -356,14 +359,14 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         a10.setDays(30);
 
         a11.setAmount(600000);
-        a11.setProfit(750000-600000);
+        a11.setProfit(770000-600000);
         a11.setVIP(5);
         a11.setName("VVIP 5");
         a11.setpReturn(0);
         a11.setDays(30);
 
         a12.setAmount(700000);
-        a12.setProfit(870000-700000);
+        a12.setProfit(890000-700000);
         a12.setVIP(6);
         a12.setName("VVIP 6");
         a12.setpReturn(0);
@@ -703,7 +706,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
             @Override
             public void onClick(View v) {
                 //_openWhatsApp("+1(707) 731-6403","Hello Customer Service");
-                _openWhatsApp("+255719755701","Hello Customer Service");
+                _openWhatsApp("+255744040021","Hello Customer Service");
             }
         });
 
@@ -842,8 +845,9 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
             cc.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(getApplicationContext(), ChatRoom.class);
-                    startActivity(i);
+                   // Intent i = new Intent(getApplicationContext(), ChatRoom.class);
+                    //startActivity(i);
+                    _openWhatsApp("+255744040021","Hello Customer Service");
                 }
             });
 
@@ -1462,9 +1466,10 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         }
 
     }
-    private void _openWhatsApp(String numero,String mensaje) {
+    private void _openWhatsApp(String phone,String text) {
 
-        Intent i = new Intent(getApplicationContext(), CustomerRoom.class);
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("https://api.whatsapp.com/send?phone="+phone+"&text="+Uri.encode(text)));
         startActivity(i);
     }
     private void CheckBalance(){
@@ -1516,8 +1521,8 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
                         Toast(
                                 finalI,
                                 "Weka Tsh"+String.format(Locale.US,"%,d",amountModels.get(finalI).getAmount()),
-                                "Pata Faida Ya Tsh"+String.format(Locale.US,"%,d",(amountModels.get(finalI).getProfit()+ amountModels.get(finalI).getAmount())),
-                                "Mzunguko Ni Siku "+amountModels.get(finalI).getDays(),
+                                "Pata Tsh"+String.format(Locale.US,"%,d",(amountModels.get(finalI).getProfit()+ amountModels.get(finalI).getAmount())),
+                                "Ndani Ya Siku "+amountModels.get(finalI).getDays(),
                                 "",
                                 "TANGAZA BIDHAA KWENYE MASOKO ONLINE KWA MFUMO WA KU SPIN KUPITIA PROGRAMU YA PANDORA SPIN LLC NA UKUSANYE FEDHA YA FAIDA KILA SIKU"
                         );
@@ -1827,31 +1832,7 @@ public class MainActivity extends AppCompatActivity implements RequestListener<D
         reference.child("invite").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                for (DataSnapshot ds: snapshot.getChildren()) { // Fixed typo: getChildrean() to getChildren()
-                    String key = ds.getKey();
-                    final long[] reward = {0};
-                    invitedUserReference.child(key).child("balance").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.exists()){
-                                long userBalance = snapshot.getValue(Long.class);
-                                reward[0] = userBalance == 1500 ? 200 : (userBalance > 1500 ? 2500 : 0);
-                                reference.child("balance").setValue(my_net_balance[0] + reward[0]).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        // Handle onComplete if needed
-                                    }
-                                });
-                            }
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            // Handle onCancelled if needed
-                        }
-                    });
-                }
+                total_invites[0] = snapshot.getChildrenCount();
             }
 
             @Override
